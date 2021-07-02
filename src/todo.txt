@@ -1,0 +1,22 @@
+//insert back image
+      //mkae navbar using bootstrap elements
+      //make a conatiner for welcome message
+      //add image in background container
+      //add animations in the following things
+      //make product category page
+
+
+      //add contact us page 
+    //make about us page
+    //make checkout and cart page
+    //make product page componentn
+    //add routes for product page componnents
+    //connect with server and fetch data
+    //when fetched data , get data from the server
+    
+
+
+    //upload images to cloudinary to bvackend server
+    
+    //add payument options in backend
+      
