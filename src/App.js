@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Button, Container, Row, Col  , Nav , NavDropdown } from 'react-bootstrap';
-import Navbar from 'react-bootstrap/Navbar'
+import { Button, Container, Row, Col , Image } from 'react-bootstrap';
+
 import logo from './logo.svg';
 import './App.css';
 import Back from "./Media/back.jpg";
 import MBack from "./Mobilemedia/back.jpg";
 import Logo from "./Media/logo.png";
-import myNavBar from './Components/Navbar.js';
+import Navbar from "./Components/myNavbar.js";
 
 const getprop = function (width, o1, o2, o3 = null) {
   if (width > 800) {
@@ -23,19 +23,33 @@ const getprop = function (width, o1, o2, o3 = null) {
 }
 
 function App() {
-  const [styles] = useState({
+ 
+  const [styles , setstyles] = useState({
     "container1": {
+     
       backgroundImage: (window.innerWidth > 600) ? `url(${Back})` : `url(${MBack})`,
+      backgroundSize :"cover" ,
      flex : 1,
      minHeight : (window.innerWidth > 500) ? window.innerHeight *0.75 : window.innerHeight * 0.50 ,
-   
+      
       
     },
+    "logoparent" : {
+      width : "25%",
+      flex : 1,
+      float : "left",
+      display : "inline",
+      justifyContent : "end",
+      
+      // backgroundColor : "purple",
 
+    },
     "logo": {
-      width: (window.innerWidth > 800) ? "80px" : "70px",
-      height: (window.innerWidth > 800) ? "80px" : "70px",
-      marginRight: 10
+      width: (window.innerWidth > 800) ? "90px" : "70px",
+      height: (window.innerWidth > 800) ? "90px" : "70px",
+      marginRight: "2%",
+      display : "inline",
+      float : (window.innerWidth > 500) ? "right" : "left",
     }
     ,
     "inline": {
@@ -49,23 +63,33 @@ function App() {
     "logocontainer": {
       position: "relative",
       flex :1,
-      flexGrow : 1,
-      minWidth : window.innerWidth > 800 ? window.innerWidth*0.40  : window.innerWidth ,
+      display : "flex",
+      
+      //width : window.innerWidth > 500 ? 500:window.innerWidth*0.90 ,
+      //  minWidth : window.innerWidth > 800 ? window.innerWidth*0.40  : window.innerWidth-100,
       // backgroundColor : "yellow",
-      top: window.innerWidth > 500 ? window.innerHeight * 0.6 : window.innerHeight * 0.4,
-      left: window.innerWidth > 600 ? window.innerWidth * 0.2 : 0,
+       top: window.innerWidth > 500 ? window.innerHeight * 0.6 : window.innerHeight * 0.4,
+      // left: window.innerWidth > 600 ? window.innerWidth * 0.2 : 0,
       margin: 0,
       padding: 0,
-
+      justifyContent : "center",
+     
+     
+      alignItems : "center",
+      // flexDirection : "row"
     },
     "brandname": {
       display: "inline",
-      flex :1,
-      flexGrow : 1,
-      minWidth : window.innerWidth > 800 ? window.innerWidth*0.30  : window.innerWidth-100 ,
+      // float : "left",
+      width : "75%",
+      // backgroundColor : "green",
       flex: 1,
+      
+      justifyContent :"center",
+    
+      alignContent : "center",
       display: "inline-block",
-      height: (window.innerWidth > 800) ? "100px" : "80px",
+      // height: (window.innerWidth > 800) ? "100px" : "80px",
 
 
     },
@@ -73,36 +97,73 @@ function App() {
       flex  : 1,
       // backgroundColor : "blue",
       fontSize: "20px",
-      width: window.innerWidth > 800 ? window.innerWidth * 0.30 :window.innerWidth -100,
+    
       margin: 0,
-
-
+      color : "red",
+      
+      
     },
     "subtitle": {
       
       flex  : 1,
-      width: window.innerWidth * 0.40,
+      // width: window.innerWidth * 0.40,
       // backgroundColor : "green",
-      fontSize: "12px"
+      fontSize: "12px",
+      
     }
   })
   return (
 
-    <Container>  
+    <Container style={{margin : 0 , padding : 0}    } fluid>  
 
-    <Container style={styles.container1} >
-      <Container style={styles.logocontainer}>
-        <img style={styles.logo} src={Logo} />
+    <Container style={styles.container1} fluid>
+      <Container style={styles.logocontainer} fluid>
+        <div style={styles.logoparent}>
+        <Image style={styles.logo}  src={Logo}  fluid/>
+     </div>
         <div style={styles.brandname}>
 
-          <Row style={styles.title}><p > PHEONIX STORE<br /><span style={styles.subtitle}>Where you get everything</span> </p></Row>
+        <Row style={styles.title}><p > PHEONIX STORE<br /><span style={styles.subtitle}>Where you get everything</span> </p></Row>
         </div>
-        </Container>
+    </Container>
   
 
 
-    </Container>
-      dwadwa
+  </Container>
+    
+    <Navbar />
+    <div id="check" style={{width : window.pageYOffset+100 , backgroundColor : "red"}}>hello</div>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
     </Container>
       
 
