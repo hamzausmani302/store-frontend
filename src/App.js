@@ -68,7 +68,7 @@ function App() {
       //width : window.innerWidth > 500 ? 500:window.innerWidth*0.90 ,
       //  minWidth : window.innerWidth > 800 ? window.innerWidth*0.40  : window.innerWidth-100,
       // backgroundColor : "yellow",
-       top: window.innerWidth > 500 ? window.innerHeight * 0.6 : window.innerHeight * 0.4,
+       top: window.innerWidth > 500 ? window.innerHeight * 0.55 : window.innerHeight * 0.35,
       // left: window.innerWidth > 600 ? window.innerWidth * 0.2 : 0,
       margin: 0,
       padding: 0,
@@ -132,38 +132,49 @@ function App() {
   </Container>
     
     <Navbar />
-    <div id="check" style={{width : window.pageYOffset+100 , backgroundColor : "red"}}>hello</div>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
+    <div id="check" style={{ backgroundColor : "red"}}>hello</div>
+
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+    <h1>Hello </h1>
+
     </Container>
       
 
