@@ -7,7 +7,10 @@ import Back from "./Media/back.jpg";
 import MBack from "./Mobilemedia/back.jpg";
 import Logo from "./Media/logo.png";
 import Navbar from "./Components/myNavbar.js";
-
+import Home from "./Pages/Home.js";
+import ContactUs from './Pages/ContactUs';
+import AboutUs from "./Pages/AboutUs.js";
+import ProductsandServices from './Pages/ProductsandServices';
 const getprop = function (width, o1, o2, o3 = null) {
   if (width > 800) {
     return o1;
@@ -133,7 +136,7 @@ function App() {
     
     <Navbar />
     <div id="check" style={{ backgroundColor : "red"}}>hello</div>
-
+    
     <h1>Hello </h1>
     <h1>Hello </h1>
     <h1>Hello </h1>
