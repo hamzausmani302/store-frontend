@@ -115,6 +115,7 @@ function App() {
       
     }
   })
+
   return (
 
     <Container style={{margin : 0 , padding : 0}    } fluid>  
@@ -135,8 +136,7 @@ function App() {
   </Container>
     
     <Navbar />
-    <div id="check" style={{ backgroundColor : "red"}}>hello</div>
-    
+    <Home />
     <h1>Hello </h1>
     <h1>Hello </h1>
     <h1>Hello </h1>
