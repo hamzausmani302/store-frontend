@@ -1,7 +1,9 @@
 
 import { Button, Container, Navbar, NavDropdown, Nav } from 'react-bootstrap';
 import React , {useState , useEffect} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
+
 function NNavbar() {
      const [done, setdone] = useState(false)
     const [navbarClasses, setscroll] = useState("navbar");
@@ -49,7 +51,8 @@ const handleScroll=() => {
 
 
     return (
-        <Container   fluid>
+        <Container  fluid>
+            <Container className="ms-4 me-2 ms-2">
             <Navbar className={navbarClasses}  bg="light" expand="sm" >
                
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -76,6 +79,7 @@ const handleScroll=() => {
                    
                 </Navbar.Collapse>
             </Navbar>
+            </Container>
         </Container>
     )
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Container, Row, Col , Image } from 'react-bootstrap';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/css/style.css';
 import logo from './logo.svg';
 import './App.css';
 import Back from "./Media/back.jpg";
@@ -11,6 +13,7 @@ import Home from "./Pages/Home.js";
 import ContactUs from './Pages/ContactUs';
 import AboutUs from "./Pages/AboutUs.js";
 import ProductsandServices from './Pages/ProductsandServices';
+import Categories from './Components/Categories.js';
 const getprop = function (width, o1, o2, o3 = null) {
   if (width > 800) {
     return o1;
@@ -130,54 +133,15 @@ function App() {
         <Row style={styles.title}><p > PHEONIX STORE<br /><span style={styles.subtitle}>Where you get everything</span> </p></Row>
         </div>
     </Container>
-  
+
 
 
   </Container>
     
     <Navbar />
-    <Home />
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
-    <h1>Hello </h1>
+    <Categories />
 
+   
     </Container>
       
 
