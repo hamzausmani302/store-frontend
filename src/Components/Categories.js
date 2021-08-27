@@ -1,23 +1,36 @@
-import React , {useState , useEffect} from 'react'
-import { Button, Container, Row, Col , Image } from 'react-bootstrap';
-import ProductCard from '../Cards/ProductCard';
+import React , {useState , useEffect} from 'react';
+import {Container , Accordion} from 'react-bootstrap';
 import axios from 'axios';
-import SubImage from '../logo.svg';
-const Product1 = (prod)=>{
-    return (<div>
-           {JSON.stringify(prod[0])}
-    </div>)
+
+const Groupfy = (props)=>{
+    let store = [];
+    if(props.category.childrens == undefined){return null}
+    for(let i= 0 ; i < props.category.childrens.length ; i++){
+        store.push(props.category.childrens[i]);
+    }
+    console.log(store)
+    return (
+       <Container>
+           <h1><a>{props.category.name}</a></h1>
+           <ul>
+               {props.category.childrens.map(el=>{return <h2><a href={`http://localhost:6090/category/media/${el.image}`}>{el.name}</a></h2>})}
+           </ul>
+        </Container>
+        )
 }
-const load_images = (filename )=>{
-   
-}
+
+
+
 export default function Categories() {
     let [categories, setcategories] = useState([{}]);
+    let [groupedcategories, setgroupedcategories] = useState([{}]);
+    
     const [done , setdone ] = useState(false);
     const [imageloaded , setimageloaded] = useState(false);
+    
     useEffect(async () =>{
         if(!done){
-            axios.get(`http://127.0.0.1:6090/product`)
+            axios.get(`http://127.0.0.1:6090/category`)
             .then(res => {
              
               console.log(JSON.stringify(res.data));
@@ -32,30 +45,11 @@ export default function Categories() {
 
       })
     
+    
     return (
-
-<Row  style={{backgroundColor : "Red"}} >
-{done==true ? categories.map((el)=>{
-            if(el.imageUrl && el.imageUrl.length != 0){return (
-                <Col style={{backgroundColor : "blue"}}  className=" mb-2 justify-content-center p-1 col-auto col-lg-3 col-md-6 col-sm-6 col-xs-6"> 
-                 <a  onClick={()=>{console.log(el._id)}} style={{textDecoration : "none"}} className="text-black-50"  href={`http://127.0.0.1:6090/product/${el._id}`}>     
-                
-                <ProductCard 
- image={`http://localhost:6090/product/media/${el.imageUrl[0].filename}`} title={el.name} price="200" />  
-                </a>
-            </Col>
-            )
-            }else{return (
-           
-                <Col style={{backgroundColor : "blue"}} className="mb-2 justify-content-center p-1 col-auto col-lg-3 col-md-6 col-sm-6 col-xs-6"> 
-          <a  onClick={()=>{console.log(el.name)}} style={{textDecoration : "none"}} className="text-black-50" href={`http://127.0.0.1:6090/product/${el._id}`}>
-                <ProductCard 
- image={SubImage} title={el.name} price={el.price} />  
-              
-     </a>
-            </Col>
-            )}}) : <div>NO DATA</div> }
-               
-     </Row>          
-    )
+       <Container>
+            {/* <Groupfy Categories={categories} /> */}
+            {categories.map(el=>{return (<Container> <a target="_blank"  href={`http://localhost:6090/category/media/${el.image}`}  > <Groupfy category={el} /> </a> </Container>)})}
+       </Container> 
+    );
 }

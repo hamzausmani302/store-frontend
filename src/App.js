@@ -13,7 +13,14 @@ import Home from "./Pages/Home.js";
 import ContactUs from './Pages/ContactUs';
 import AboutUs from "./Pages/AboutUs.js";
 import ProductsandServices from './Pages/ProductsandServices';
-import Categories from './Components/Categories.js';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 const getprop = function (width, o1, o2, o3 = null) {
   if (width > 800) {
     return o1;
@@ -29,7 +36,6 @@ const getprop = function (width, o1, o2, o3 = null) {
 }
 
 function App() {
- 
   const [styles , setstyles] = useState({
     "container1": {
      
@@ -48,7 +54,7 @@ function App() {
       justifyContent : "end",
       
       // backgroundColor : "purple",
-
+  
     },
     "logo": {
       width: (window.innerWidth > 800) ? "90px" : "70px",
@@ -64,7 +70,7 @@ function App() {
     ,
     "back": {
       //  position : "absolute"
-
+  
     },
     "logocontainer": {
       position: "relative",
@@ -96,8 +102,8 @@ function App() {
       alignContent : "center",
       display: "inline-block",
       // height: (window.innerWidth > 800) ? "100px" : "80px",
-
-
+  
+  
     },
     "title": {
       flex  : 1,
@@ -118,33 +124,49 @@ function App() {
       
     }
   })
-
+  
   return (
+    <Container  fluid>
+  <Container style={styles.container1} fluid>
+    <Container style={styles.logocontainer} fluid>
+      <div style={styles.logoparent}>
+      <Image style={styles.logo}  src={Logo}  fluid/>
+   </div>
+      <div style={styles.brandname}>
 
-    <Container style={{margin : 0 , padding : 0}    } fluid>  
-
-    <Container style={styles.container1} fluid>
-      <Container style={styles.logocontainer} fluid>
-        <div style={styles.logoparent}>
-        <Image style={styles.logo}  src={Logo}  fluid/>
-     </div>
-        <div style={styles.brandname}>
-
-        <Row style={styles.title}><p > PHEONIX STORE<br /><span style={styles.subtitle}>Where you get everything</span> </p></Row>
-        </div>
-    </Container>
-
-
-
+      <Row style={styles.title}><p > PHEONIX STORE<br /><span style={styles.subtitle}>Where you get everything</span> </p></Row>
+      </div>
   </Container>
-    
-    <Navbar />
-    <Container>
-    <Categories />
+  </Container>
+  
+    <Container style={{margin : 0 , padding : 0}    } fluid>  
+         <Navbar />
+         <Router>
+     
+
+        <Switch>
+          <Route path="/about">
+            <AboutUs />
+          </Route>
+          <Route path="/contactus">
+            <ContactUs />
+          </Route>
+          <Route path="/products">
+            <ProductsandServices />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      
+    </Router>
    
-    </Container>
     
     </Container>
+
+    </Container>
+  
+  
       
 
    

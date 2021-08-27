@@ -9,8 +9,8 @@ export default function ProductCard(props) {
                 
             </Row>
             <Row className="mt-4">
-                <Col className="text-center col-xs-6">{props.title} </Col> 
-                <Col className="text-center col-xs-6">{props.price} </Col> 
+                <Col className="text-center col-xs-12">{props.title} </Col> 
+                
                                
             </Row>
           {/* //  </a> */}

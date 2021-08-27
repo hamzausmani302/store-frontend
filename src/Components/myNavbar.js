@@ -58,7 +58,7 @@ const handleScroll=() => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav collapse navbar-collapse">
                     <Nav style={styles.nav} className=" navbar navbar-expand-lg navbar-light bg-light mr-auto " >
-                        <Nav.Link  href="#home">Home</Nav.Link>
+                        <Nav.Link  href="/home">Home</Nav.Link>
                         <NavDropdown styles={styles.itemdropdown}   id="dropdown show" title="Products and Services" >
                             
                             <NavDropdown  styles={styles.itemdropdown}   title="Automobiles" id="dropdown show" href="#action/3.1">
@@ -70,8 +70,8 @@ const handleScroll=() => {
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                         </NavDropdown>
                      
-                        <Nav.Link href="#link">Contact Us</Nav.Link>
-                        <Nav.Link href="#link">About Us</Nav.Link>
+                        <Nav.Link href="/contactus">Contact Us</Nav.Link>
+                        <Nav.Link href="/about">About Us</Nav.Link>
                         <Nav.Link href="#link">Checkout</Nav.Link>
                         
 
