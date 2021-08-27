@@ -139,9 +139,11 @@ function App() {
   </Container>
     
     <Navbar />
+    <Container>
     <Categories />
-
    
+    </Container>
+    
     </Container>
       
 

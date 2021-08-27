@@ -1,8 +1,9 @@
 import React , {useState , useEffect} from 'react'
 import { Button, Container, Row, Col , Image } from 'react-bootstrap';
+import ProductCard from '../Cards/ProductCard';
 import axios from 'axios';
-
-const Product = (prod)=>{
+import SubImage from '../logo.svg';
+const Product1 = (prod)=>{
     return (<div>
            {JSON.stringify(prod[0])}
     </div>)
@@ -32,10 +33,29 @@ export default function Categories() {
       })
     
     return (
-        <Container>
-            {/* {done==true ? Product(categories) : <div>NO DATA</div> } */}
-            {done==true ? categories.map((el)=>{if(el.imageUrl && el.imageUrl.length != 0){return (<Container><img style={{width : 30 , height : 30}} src="http://localhost:6090/product/media/imageUrl-alitfitt.png" /></Container>)}}) : <div>NO DATA</div> }
-dwdwa
-        </Container>
+
+<Row  style={{backgroundColor : "Red"}} >
+{done==true ? categories.map((el)=>{
+            if(el.imageUrl && el.imageUrl.length != 0){return (
+                <Col style={{backgroundColor : "blue"}}  className=" mb-2 justify-content-center p-1 col-auto col-lg-3 col-md-6 col-sm-6 col-xs-6"> 
+                 <a  onClick={()=>{console.log(el._id)}} style={{textDecoration : "none"}} className="text-black-50"  href={`http://127.0.0.1:6090/product/${el._id}`}>     
+                
+                <ProductCard 
+ image={`http://localhost:6090/product/media/${el.imageUrl[0].filename}`} title={el.name} price="200" />  
+                </a>
+            </Col>
+            )
+            }else{return (
+           
+                <Col style={{backgroundColor : "blue"}} className="mb-2 justify-content-center p-1 col-auto col-lg-3 col-md-6 col-sm-6 col-xs-6"> 
+          <a  onClick={()=>{console.log(el.name)}} style={{textDecoration : "none"}} className="text-black-50" href={`http://127.0.0.1:6090/product/${el._id}`}>
+                <ProductCard 
+ image={SubImage} title={el.name} price={el.price} />  
+              
+     </a>
+            </Col>
+            )}}) : <div>NO DATA</div> }
+               
+     </Row>          
     )
 }
