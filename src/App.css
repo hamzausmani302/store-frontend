@@ -46,3 +46,17 @@
 #basic-nav-dropdown{
   background-color:  "red",
 }
+.navbar1{
+    background-color:  "yellow";
+
+}
+.scrolled{
+  flex : 1;
+  width : "100%";
+  justify-content: "space-evenly";
+  position: fixed;
+  top: 0;
+  left : 0;
+  background-color: "white";
+  
+}

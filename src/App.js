@@ -1,12 +1,25 @@
 import React, { useState } from 'react';
 import { Button, Container, Row, Col , Image } from 'react-bootstrap';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/css/style.css';
 import logo from './logo.svg';
 import './App.css';
 import Back from "./Media/back.jpg";
 import MBack from "./Mobilemedia/back.jpg";
 import Logo from "./Media/logo.png";
 import Navbar from "./Components/myNavbar.js";
+import Home from "./Pages/Home.js";
+import ContactUs from './Pages/ContactUs';
+import AboutUs from "./Pages/AboutUs.js";
+import ProductsandServices from './Pages/ProductsandServices';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const getprop = function (width, o1, o2, o3 = null) {
   if (width > 800) {
@@ -23,7 +36,6 @@ const getprop = function (width, o1, o2, o3 = null) {
 }
 
 function App() {
- 
   const [styles , setstyles] = useState({
     "container1": {
      
@@ -42,7 +54,7 @@ function App() {
       justifyContent : "end",
       
       // backgroundColor : "purple",
-
+  
     },
     "logo": {
       width: (window.innerWidth > 800) ? "90px" : "70px",
@@ -58,7 +70,7 @@ function App() {
     ,
     "back": {
       //  position : "absolute"
-
+  
     },
     "logocontainer": {
       position: "relative",
@@ -68,7 +80,7 @@ function App() {
       //width : window.innerWidth > 500 ? 500:window.innerWidth*0.90 ,
       //  minWidth : window.innerWidth > 800 ? window.innerWidth*0.40  : window.innerWidth-100,
       // backgroundColor : "yellow",
-       top: window.innerWidth > 500 ? window.innerHeight * 0.6 : window.innerHeight * 0.4,
+       top: window.innerWidth > 500 ? window.innerHeight * 0.55 : window.innerHeight * 0.35,
       // left: window.innerWidth > 600 ? window.innerWidth * 0.2 : 0,
       margin: 0,
       padding: 0,
@@ -90,8 +102,8 @@ function App() {
       alignContent : "center",
       display: "inline-block",
       // height: (window.innerWidth > 800) ? "100px" : "80px",
-
-
+  
+  
     },
     "title": {
       flex  : 1,
@@ -112,59 +124,49 @@ function App() {
       
     }
   })
+  
   return (
+    <Container  fluid>
+  <Container style={styles.container1} fluid>
+    <Container style={styles.logocontainer} fluid>
+      <div style={styles.logoparent}>
+      <Image style={styles.logo}  src={Logo}  fluid/>
+   </div>
+      <div style={styles.brandname}>
 
+      <Row style={styles.title}><p > PHEONIX STORE<br /><span style={styles.subtitle}>Where you get everything</span> </p></Row>
+      </div>
+  </Container>
+  </Container>
+  
     <Container style={{margin : 0 , padding : 0}    } fluid>  
+         <Navbar />
+         <Router>
+     
 
-    <Container style={styles.container1} fluid>
-      <Container style={styles.logocontainer} fluid>
-        <div style={styles.logoparent}>
-        <Image style={styles.logo}  src={Logo}  fluid/>
-     </div>
-        <div style={styles.brandname}>
+        <Switch>
+          <Route path="/about">
+            <AboutUs />
+          </Route>
+          <Route path="/contactus">
+            <ContactUs />
+          </Route>
+          <Route path="/products">
+            <ProductsandServices />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      
+    </Router>
+   
+    
+    </Container>
 
-        <Row style={styles.title}><p > PHEONIX STORE<br /><span style={styles.subtitle}>Where you get everything</span> </p></Row>
-        </div>
     </Container>
   
-
-
-  </Container>
-    
-    <Navbar />
-    <div id="check" style={{width : window.pageYOffset+100 , backgroundColor : "red"}}>hello</div>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    <h1>hello</h1>
-    </Container>
+  
       
 
    
