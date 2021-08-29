@@ -13,7 +13,7 @@ import Home from "./Pages/Home.js";
 import ContactUs from './Pages/ContactUs';
 import AboutUs from "./Pages/AboutUs.js";
 import ProductsandServices from './Pages/ProductsandServices';
-
+import CheckOut  from './Pages/CheckOut';
 import {
   BrowserRouter as Router,
   Switch,
@@ -153,6 +153,9 @@ function App() {
           </Route>
           <Route path="/products">
             <ProductsandServices />
+          </Route>
+          <Route path="/checkout">
+            <CheckOut />    
           </Route>
           <Route path="/">
             <Home />
