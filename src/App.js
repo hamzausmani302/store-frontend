@@ -4,7 +4,7 @@ import { Button, Container, Row, Col , Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/style.css';
 import logo from './logo.svg';
-import './App.css';
+
 import Back from "./Media/back.jpg";
 import MBack from "./Mobilemedia/back.jpg";
 import Logo from "./Media/logo.png";
@@ -14,6 +14,7 @@ import ContactUs from './Pages/ContactUs';
 import AboutUs from "./Pages/AboutUs.js";
 import ProductsandServices from './Pages/ProductsandServices';
 import CheckOut  from './Pages/CheckOut';
+import Adminstration from './Pages/Adminstration'
 import {
   BrowserRouter as Router,
   Switch,
@@ -140,24 +141,32 @@ function App() {
   </Container>
   
     <Container style={{margin : 0 , padding : 0}    } fluid>  
-         <Navbar />
+        
          <Router>
      
 
         <Switch>
+        <Route path="/administration">
+            <Adminstration />
+          </Route>
           <Route path="/about">
+          <Navbar />
             <AboutUs />
           </Route>
           <Route path="/contactus">
+          <Navbar />
             <ContactUs />
           </Route>
           <Route path="/products">
+          <Navbar />
             <ProductsandServices />
           </Route>
           <Route path="/checkout">
+          <Navbar />
             <CheckOut />    
           </Route>
           <Route path="/">
+          <Navbar />
             <Home />
           </Route>
         </Switch>
