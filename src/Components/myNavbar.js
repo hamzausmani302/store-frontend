@@ -72,7 +72,7 @@ const handleScroll=() => {
                      
                         <Nav.Link href="/contactus">Contact Us</Nav.Link>
                         <Nav.Link href="/about">About Us</Nav.Link>
-                        <Nav.Link href="#link">Checkout</Nav.Link>
+                        <Nav.Link href="/checkout">Checkout</Nav.Link>
                         
 
                     </Nav>
